@@ -1,0 +1,40 @@
+.header {
+    //  todo that I can give elements in menu in Pages icons
+    background-color: #fff;
+    max-height: 100px;
+    &__logo {
+        width: 104px;
+        height: 47px;
+        margin-left: 20px;
+    }
+    &__menu {
+        display: flex;
+        li {
+            a {
+                font-size: 14px;
+                font-weight: 600;
+                color: #313131;
+            }
+            margin-right: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+    &__contact {
+        margin-right: 20px;
+    }
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-content: center;
+        align-items: center;
+    }
+}
+
+.menu-item-has-children {
+    li {
+        display: none;
+    }
+}

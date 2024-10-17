@@ -1,5 +1,4 @@
 .header {
-    //  todo that I can give elements in menu in Pages icons
     background-color: #fff;
     max-height: 100px;
     &__logo {
@@ -9,11 +8,16 @@
     }
     &__menu {
         display: flex;
-        li {
-            a {
+        > li {
+            > a {
                 font-size: 14px;
                 font-weight: 600;
                 color: #313131;
+                width: 83px;
+                height: 102px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
             margin-right: 40px;
             display: flex;
@@ -34,7 +38,39 @@
 }
 
 .menu-item-has-children {
-    li {
+    position: relative;
+    ul {
         display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 90;
     }
+    &:hover ul {
+        height: 70px;
+        background-color: #fff;
+        border-top: 2px solid #fbae02;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        li {
+            margin-left: 20px;
+            a {
+                line-height: 1.65;
+                font-size: 14px;
+                color: #7b7a7a;
+                font-family: poppins, sans-serif;
+                i {
+                    margin-right: 7px;
+                    width: 16px;
+                }
+                border-bottom: 1px solid rgba($color: #d5d1d1, $alpha: 1);
+            }
+            width: 170px;
+        }
+    }
+}
+
+.current-menu-item a {
+    color: #fbae02 !important;
 }

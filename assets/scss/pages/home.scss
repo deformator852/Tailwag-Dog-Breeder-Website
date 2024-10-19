@@ -1,0 +1,35 @@
+@use "../components/red_button.scss";
+
+.ready-to-adopt {
+    width: 100%;
+    z-index: -1;
+    min-height: 640px;
+    position: relative;
+    background-color: #ecebf1;
+    &__wrapper {
+        max-width: 1200px;
+    }
+    &__bottom-wave {
+        transform: rotate(180deg);
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        line-height: 0;
+        direction: ltr;
+    }
+    svg {
+        height: 70px;
+        .shape-fill {
+            fill: #fff;
+            transform-origin: center;
+            transform: rotateY(0deg);
+        }
+        display: block;
+        width: calc(100% + 1.3px);
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

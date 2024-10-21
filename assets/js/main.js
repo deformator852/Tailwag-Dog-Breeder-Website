@@ -7,4 +7,5 @@ $(document).ready(function () {
       $(".sub-menu").fadeOut(400);
     }
   );
+  $(".ready-to-adopt__content-wrapper").fadeIn(1000);
 });

@@ -28,7 +28,10 @@
   background-color: #ecebf1;
 }
 .ready-to-adopt__wrapper {
-  max-width: 1200px;
+  max-width: 1890px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 .ready-to-adopt__bottom-wave {
   transform: rotate(180deg);
@@ -52,4 +55,58 @@
   fill: #fff;
   transform-origin: center;
   transform: rotateY(0deg);
+}
+.ready-to-adopt__content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: flex-start;
+  min-height: 640px;
+  width: 1200px;
+}
+.ready-to-adopt__content h2 {
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+.ready-to-adopt__content p {
+  margin-top: 5px;
+  margin-bottom: 30px;
+}
+
+.best-for-your-pet {
+  margin-top: 57px;
+}
+.best-for-your-pet__cards {
+  display: flex;
+  justify-content: center;
+}
+.best-for-your-pet__card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 369px;
+  height: 146px;
+  border-radius: 30px;
+  margin-right: 20px;
+  box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.08);
+}
+.best-for-your-pet__card img {
+  width: 63px;
+  height: 63px;
+  margin-right: 25px;
+}
+.best-for-your-pet__card-title, .best-for-your-pet__card-text {
+  width: 242px;
+}
+.best-for-your-pet__card-title {
+  color: #FBAE02;
+  font-size: 18px;
+  font-weight: 600;
+}
+.best-for-your-pet__card-text {
+  line-height: 1.65;
+  font-size: 14px;
+  color: #7b7a7a;
+  font-family: poppins, sans-serif;
 }

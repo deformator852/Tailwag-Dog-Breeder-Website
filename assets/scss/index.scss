@@ -2,26 +2,30 @@
 @use "footer.scss";
 
 body {
-    a {
-        text-decoration: none;
-    }
-    ul {
-        list-style: none;
-    }
+  a {
+    text-decoration: none;
+  }
+
+  ul {
+    list-style: none;
+  }
 }
 
 *,
 *::after,
 *::before {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 html {
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    color: #545454;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #545454;
 }
 
+.pet-card {
+
+}

@@ -1,6 +1,7 @@
 <?php
-function render_to_adopt_block(){
-    ?>
+function render_to_adopt_block()
+{
+?>
     <div class="ready-to-adopt" style="background-image:url(<?= get_template_directory_uri() . "/assets" . "/img" . "/ready-to-adopt.jpg" ?>); background-size:cover; background-position:center center">
         <div class="ready-to-adopt__wrapper">
             <div class="ready-to-adopt__content">

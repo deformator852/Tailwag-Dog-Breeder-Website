@@ -225,12 +225,19 @@
   margin-right: 15px;
 }
 
+.slick-active:last-child {
+  margin-right: 0;
+}
+
 .available-pets {
-  height: 516px;
+  height: 800px;
   margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.available-pets .featured-pets {
+  display: flex;
 }
 .available-pets__content {
   margin-top: 80px;

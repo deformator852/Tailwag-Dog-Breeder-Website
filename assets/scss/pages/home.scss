@@ -168,7 +168,6 @@
 }
 
 .want-pet {
-  //width: 1890px;
   height: 516px;
   display: flex;
   justify-content: center;
@@ -231,12 +230,20 @@
   margin-right: 15px;
 }
 
+.slick-active:last-child {
+  margin-right: 0;
+}
+
 .available-pets {
-  height: 516px;
+  height: 800px;
   margin-top: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  .featured-pets {
+    display: flex;
+  }
 
   &__content {
     margin-top: 80px;

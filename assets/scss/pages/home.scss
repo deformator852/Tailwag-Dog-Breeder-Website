@@ -237,12 +237,26 @@
 .available-pets {
   height: 800px;
   margin-top: 80px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-list {
+    overflow: hidden;
+  }
+
+  /*.featured-pets, .pet-card {
+    min-width: 0;
+  } */
 
   .featured-pets {
-    display: flex;
+    width: 1128px;
   }
 
   &__content {

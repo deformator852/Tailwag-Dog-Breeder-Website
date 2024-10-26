@@ -8,12 +8,12 @@ $(document).ready(function () {
         }
     );
     $(".ready-to-adopt__content-wrapper").fadeIn(1000);
-    // $('.featured-pets').slick({
-    //     slidesToShow: 3,
-    //     slidesToScroll: 1,
-    //     autoplay: false,
-    //     autoplaySpeed: 2000,
-    //     dots: false,
-    //    arrows: true,
-    // });
+    $('.featured-pets').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: false,
+        autoplaySpeed: 2000,
+        dots: false,
+        arrows: true,
+    });
 });

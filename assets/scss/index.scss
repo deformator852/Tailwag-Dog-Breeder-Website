@@ -33,19 +33,26 @@ html {
   background-color: #fff;
   position: relative;
   font-family: poppins, sans-serif;
+  overflow: hidden;
 
   .red-button {
     margin-top: 33px;
   }
 
-  &__image img {
-    display: block;
-    width: 100%;
-    height: 50%
+  &__image {
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 282px;
+      transition: scale 400ms;
+      overflow: hidden;
+    }
   }
 
   &__description {
-    height: 50%;
+    height: 270px;
     margin-left: 25px;
     margin-top: 30px;
   }
@@ -82,4 +89,8 @@ html {
     font-size: 21px;
     line-height: 1.1;
   }
+}
+
+.img-zoom {
+  transform: scale(1.2);
 }

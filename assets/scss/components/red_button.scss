@@ -1,25 +1,28 @@
 .red-button {
-    color: #ffffff;
-    background: rgb(251, 105, 98) 80%;
-    padding: 16px 30px 16px 30px;
-    border: none;
-    border-radius: 40px;
+  color: #ffffff;
+  background: rgb(251, 105, 98) 80%;
+  padding: 16px 30px 16px 30px;
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  text-align: center;
+  fill: #fff;
+
+  a {
+    line-height: 1;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 500;
     display: flex;
-    text-align: center;
-    fill: #fff;
-    a {
-        line-height: 1;
-        font-size: 15px;
-        color: #fff;
-        font-weight: 500;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-decoration: none;
-        white-space: nowrap;
-    }
-    i {
-        margin-left: 15px;
-        color: #ffffff;
-    }
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  i {
+    margin-left: 15px;
+    color: #ffffff;
+  }
+    
 }

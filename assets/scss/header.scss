@@ -1,89 +1,111 @@
 .header {
-    background-color: #fff;
-    max-height: 100px;
-    &__logo {
-        width: 104px;
-        height: 47px;
-        margin-left: 20px;
-    }
-    &__menu {
+  background-color: #fff;
+  max-height: 100px;
+
+  &__logo {
+    width: 104px;
+    height: 47px;
+    margin-left: 20px;
+  }
+
+  &__menu {
+    display: flex;
+
+    > li {
+      > a {
+        font-size: 14px;
+        font-weight: 600;
+        color: #313131;
+        width: 83px;
+        height: 102px;
         display: flex;
-        > li {
-            > a {
-                font-size: 14px;
-                font-weight: 600;
-                color: #313131;
-                width: 83px;
-                height: 102px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                &:hover {
-                    color: #fbae02;
-                    transition: color 0.2s ease-in-out;
-                }
-            }
-            margin-right: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-    }
-    &__contact {
-        margin-right: 20px;
-    }
-    &__wrapper {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        align-content: center;
+        justify-content: center;
         align-items: center;
+
+        &:hover {
+          color: #fbae02;
+          transition: color 0.2s ease-in-out;
+        }
+      }
+
+      margin-right: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
+  }
+
+  &__contact {
+    margin-right: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-content: center;
+    align-items: center;
+  }
 }
 
 .menu-item-has-children {
-    position: relative;
-    ul {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        z-index: 90;
-        background-color: #fff;
-        border-top: 2px solid #fbae02;
-        flex-direction: column;
-        align-items: flex-start;
-        li {
-            margin-left: 20px;
-            margin-right: 20px;
-            padding-bottom: 7px;
-            margin-top: 7px;
-            a {
-                line-height: 1.65;
-                font-size: 14px;
-                color: #7b7a7a;
-                font-family: poppins, sans-serif;
-                i {
-                    margin-right: 7px;
-                    width: 16px;
-                }
-                &:hover {
-                    transition: color 0.3s ease-in-out;
-                    color: rgba($color: #130404, $alpha: 1);
-                }
-            }
-            border-bottom: 1px solid rgba($color: #d5d1d1, $alpha: 1);
-            width: 210px;
-            &:last-child {
-                border-bottom: none;
-            }
-            &:first-child {
-                margin-top: 22px;
-            }
+  position: relative;
+
+  ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 90;
+    background-color: #fff;
+    border-top: 2px solid #fbae02;
+    flex-direction: column;
+    align-items: flex-start;
+
+    li {
+      margin-left: 20px;
+      margin-right: 20px;
+      padding-bottom: 7px;
+      margin-top: 7px;
+
+      a {
+        line-height: 1.65;
+        font-size: 14px;
+        color: #7b7a7a;
+        font-family: poppins, sans-serif;
+
+        i {
+          margin-right: 7px;
+          width: 16px;
         }
+
+        &:hover {
+          transition: color 0.3s ease-in-out;
+          color: rgba($color: #130404, $alpha: 1);
+        }
+      }
+
+      border-bottom: 1px solid rgba($color: #d5d1d1, $alpha: 1);
+      width: 210px;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      &:first-child {
+        margin-top: 22px;
+      }
     }
+  }
 }
 
 .current-menu-item a {
-    color: #fbae02 !important;
+  color: #fbae02 !important;
+}
+
+.current-menu-item a::before {
+  font-family: "Font Awesome 6 Free";
+  content: '\f1b0';
+  margin-right: 5px;
+  margin-bottom: 4px;
 }

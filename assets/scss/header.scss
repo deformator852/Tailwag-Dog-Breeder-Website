@@ -1,4 +1,15 @@
 .header {
+  .current-menu-item a {
+    color: #fbae02 !important;
+  }
+
+  .current-menu-item a::before {
+    font-family: "Font Awesome 6 Free";
+    content: '\f1b0';
+    margin-right: 5px;
+    margin-bottom: 4px;
+  }
+
   background-color: #fff;
   max-height: 100px;
 
@@ -97,15 +108,6 @@
       }
     }
   }
+
 }
 
-.current-menu-item a {
-  color: #fbae02 !important;
-}
-
-.current-menu-item a::before {
-  font-family: "Font Awesome 6 Free";
-  content: '\f1b0';
-  margin-right: 5px;
-  margin-bottom: 4px;
-}

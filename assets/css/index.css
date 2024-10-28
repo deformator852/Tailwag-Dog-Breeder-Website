@@ -2,6 +2,15 @@
   background-color: #fff;
   max-height: 100px;
 }
+.header .current-menu-item a {
+  color: #fbae02 !important;
+}
+.header .current-menu-item a::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f1b0";
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
 .header__logo {
   width: 104px;
   height: 47px;
@@ -82,17 +91,6 @@
 }
 .menu-item-has-children ul li:first-child {
   margin-top: 22px;
-}
-
-.current-menu-item a {
-  color: #fbae02 !important;
-}
-
-.current-menu-item a::before {
-  font-family: "Font Awesome 6 Free";
-  content: "\f1b0";
-  margin-right: 5px;
-  margin-bottom: 4px;
 }
 
 .footer {
@@ -261,4 +259,21 @@ html {
 
 .img-zoom {
   transform: scale(1.2);
+}
+
+#scroll-to-top {
+  width: 44px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  background: rgba(100, 100, 100, 0.65);
+  position: fixed;
+  right: 35px;
+  bottom: -5px;
+  z-index: 2;
+  border-radius: 5px;
+  display: none;
+}
+#scroll-to-top i {
+  color: white;
 }

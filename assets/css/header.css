@@ -2,6 +2,15 @@
   background-color: #fff;
   max-height: 100px;
 }
+.header .current-menu-item a {
+  color: #fbae02 !important;
+}
+.header .current-menu-item a::before {
+  font-family: "Font Awesome 6 Free";
+  content: "\f1b0";
+  margin-right: 5px;
+  margin-bottom: 4px;
+}
 .header__logo {
   width: 104px;
   height: 47px;
@@ -82,15 +91,4 @@
 }
 .menu-item-has-children ul li:first-child {
   margin-top: 22px;
-}
-
-.current-menu-item a {
-  color: #fbae02 !important;
-}
-
-.current-menu-item a::before {
-  font-family: "Font Awesome 6 Free";
-  content: "\f1b0";
-  margin-right: 5px;
-  margin-bottom: 4px;
 }

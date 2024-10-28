@@ -28,8 +28,8 @@
             </div>
         </div>
     </div>
-    <div class="footer__menu">
-        <?php wp_nav_menu(["theme location" => "footer-menu", "container" => "menu", "menu_class" => "footer__menu"]); ?>
+    <div class="footer__menu-div">
+        <?php wp_nav_menu(["menu" => "Footer menu", "container" => "menu", "menu_class" => "footer__menu"]); ?>
 
     </div>
     <div class="footer__socials">

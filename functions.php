@@ -14,6 +14,9 @@ class ThemeAssets
             //     wp_enqueue_style("single", get_template_directory_uri() . '/assets/css/pages/single.css');
             // }
 
+            if (is_page_template("about.php")) {
+                wp_enqueue_style('about_page', get_template_directory_uri() . '/assets/css/pages/about.css');
+            }
             wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
             wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));
             wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array('custom-jquery'));
@@ -30,10 +33,12 @@ class ThemeAssets
 
     public function register_menus()
     {
-        register_nav_menus([
-            "header-menu" => "Header menu",
-            "footer-menu" => "Footer menu"
-        ]);
+        add_action("after_setup_theme", function () {
+            register_nav_menus([
+                "header-menu" => "Header menu",
+                "footer-menu" => "Footer menu"
+            ]);
+        });
     }
 }
 

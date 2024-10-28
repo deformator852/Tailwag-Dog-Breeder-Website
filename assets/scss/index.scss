@@ -94,3 +94,21 @@ html {
 .img-zoom {
   transform: scale(1.2);
 }
+
+#scroll-to-top {
+  width: 44px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  background: rgba(100, 100, 100, 0.65);
+  position: fixed;
+  right: 35px;
+  bottom: -5px;
+  z-index: 2;
+  border-radius: 5px;
+  display: none;
+
+  i {
+    color: white;
+  }
+}

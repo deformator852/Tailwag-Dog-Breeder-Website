@@ -1,0 +1,80 @@
+@use "../components/red_button";
+
+.puppies-block {
+  width: 100%;
+  height: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 1200px;
+
+    h1 {
+      color: #FFFFFF;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 1.2em;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      color: rgba(255, 255, 255, 0.8117647059);
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.2em;
+      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+.puppies-list-block {
+  margin: 65px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__elements {
+    display: grid;
+    grid-template-columns: repeat(3, 376px);
+    grid-auto-rows: 550px;
+    gap: 35px;
+  }
+
+  &__filter {
+    margin-bottom: 45px;
+
+    ul {
+      display: flex;
+    }
+
+    &-element {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      cursor: pointer;
+      height: 38px;
+      background: silver;
+      border-radius: 30px;
+      font-size: 12px;
+      line-height: 1;
+      font-weight: 500;
+      margin-right: 24px;
+    }
+
+    &-element:not(:first-child) {
+      width: 98px;
+    }
+
+    &-element:first-child {
+      width: 78px;
+    }
+  }
+
+  .pro-checked div {
+    transition: background-color 0.2s ease;
+    background-color: #fa524f;
+  }
+}

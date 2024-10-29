@@ -3,6 +3,11 @@
     color: #fbae02 !important;
   }
 
+  .fa-chevron-down {
+    margin-left: 5px;
+    margin-bottom: 2px;
+  }
+
   .current-menu-item a::before {
     font-family: "Font Awesome 6 Free";
     content: '\f1b0';

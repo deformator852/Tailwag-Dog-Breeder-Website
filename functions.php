@@ -17,6 +17,12 @@ class ThemeAssets
             if (is_page_template("about.php")) {
                 wp_enqueue_style('about_page', get_template_directory_uri() . '/assets/css/pages/about.css');
             }
+            if (is_page_template("puppies.php")) {
+                wp_enqueue_style("puppies_page", get_template_directory_uri() . '/assets/css/pages/puppies.css');
+            }
+            if (is_page_template("services.php")) {
+                wp_enqueue_style("services_page", get_template_directory_uri() . '/assets/css/pages/services.css');
+            }
             wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
             wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));
             wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array('custom-jquery'));

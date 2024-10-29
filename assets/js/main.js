@@ -51,4 +51,8 @@ $(document).ready(function () {
             $("#scroll-to-top").fadeOut();
         }
     })
+    $(".puppies-list-block__filter li").click(function () {
+        $(".puppies-list-block__filter li").removeClass("pro-checked")
+        $(this).addClass("pro-checked");
+    })
 });

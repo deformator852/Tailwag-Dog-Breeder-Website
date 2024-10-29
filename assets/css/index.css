@@ -5,6 +5,10 @@
 .header .current-menu-item a {
   color: #fbae02 !important;
 }
+.header .fa-chevron-down {
+  margin-left: 5px;
+  margin-bottom: 2px;
+}
 .header .current-menu-item a::before {
   font-family: "Font Awesome 6 Free";
   content: "\f1b0";
@@ -207,6 +211,7 @@ html {
   position: relative;
   font-family: poppins, sans-serif;
   overflow: hidden;
+  border-radius: 3px;
 }
 .pet-card .red-button {
   margin-top: 33px;

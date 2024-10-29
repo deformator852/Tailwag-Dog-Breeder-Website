@@ -1,0 +1,81 @@
+@use "../components/red_button";
+@use "../components/service_card";
+
+.services {
+  height: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__content {
+    width: 1180px;
+
+    h1 {
+      color: #FFFFFF;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 1.2em;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      color: #FFFFFFCF;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.2em;
+      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
+    }
+  }
+}
+
+.services-list {
+  margin-top: 70px;
+  column-gap: 25px;
+  row-gap: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(3, 300px);
+  justify-content: center;
+  height: 800px;
+}
+
+.adopt-puppy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+      font-size: 45px;
+      line-height: 1.2;
+      color: #313131;
+      font-weight: 600;
+      font-family: poppins, sans-serif;
+    }
+  }
+
+  &__view {
+    display: flex;
+    position: relative;
+
+    img {
+      width: 450px;
+      height: 425px;
+    }
+
+    .red-button {
+      position: absolute;
+      margin-right: 200px;
+      left: 50%;
+      top: 20%;
+    }
+  }
+}
+
+

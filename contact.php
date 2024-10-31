@@ -43,9 +43,22 @@
                     </div>
                 </div>
             </div>
-            <div class="contact__form">
-
+            <div class="contact__form"
+                 style="background-image:url('https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/bone-bg.png')">
+                <form>
+                    <input class="contact__form-name" type="text" name="name" placeholder="Your Name">
+                    <input class="contact__form-email" type="email" name="email" placeholder="Your Email">
+                    <input class="contact__form-subject" type="text" name="subject" placeholder="Your Subject">
+                    <input class="contact__form-phone" type="text" name="phone-number"
+                           placeholder="Your Phone Number">
+                    <textarea class="contact__form-message" type="text" placeholder="Your Message"></textarea>
+                    <button type="submit">Send a message</button>
+                </form>
             </div>
+        </div>
+        <div class="map">
+            <?= do_shortcode('[wpgmza id="1"]') ?>
+        </div>
     </main>
 </main>
 <?php get_footer() ?>

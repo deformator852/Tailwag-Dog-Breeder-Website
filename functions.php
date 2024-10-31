@@ -26,6 +26,10 @@ class ThemeAssets
             if (is_page_template("contact.php")) {
                 wp_enqueue_style("contact_page", get_template_directory_uri() . '/assets/css/pages/contact.css');
             }
+
+            if (is_page_template("FAQs.php")) {
+                wp_enqueue_style("faqs_page", get_template_directory_uri() . '/assets/css/pages/faqs.css');
+            }
             wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
             wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));
             wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array('custom-jquery'));

@@ -152,6 +152,10 @@
   width: 565px;
   height: 471px;
 }
+.best-for-your-pet ul li i {
+  color: #fa524f;
+  padding-right: 10px;
+}
 
 .about-us-line {
   width: 40px;
@@ -160,11 +164,6 @@
   display: inline-block;
   margin-top: 12px;
   margin-right: 15px;
-}
-
-.red-button.fas {
-  color: #fa524f;
-  padding-right: 10px;
 }
 
 .want-pet {

@@ -55,4 +55,27 @@ $(document).ready(function () {
         $(".puppies-list-block__filter li").removeClass("pro-checked")
         $(this).addClass("pro-checked");
     })
+    $(".steps-involved > div").click(function () {
+        let step = $(this);
+        if (step.find("i").hasClass("fa-plus")) {
+            $(".steps-involved > div").each((index, element) => {
+                let el = $(element);
+                if (el.find("i").hasClass("fa-minus")) {
+                    el.find(".steps-involved__step-description").slideUp(400);
+                    el.find(".fa-minus").removeClass("fa-minus").addClass("fa-plus").css({color: "black"});
+                }
+            })
+            step.find(".steps-involved__step-description").slideDown(400);
+            step.find(".fa-plus").removeClass("fa-plus").addClass("fa-minus").css({color: "#FA524F"});
+            return 1;
+        }
+        $(".steps-involved > div").each((index, element) => {
+            let el = $(element);
+            if (el.find("i").hasClass("fa-minus")) {
+                el.find(".steps-involved__step-description").slideUp(400);
+                el.find(".fa-minus").removeClass("fa-minus").addClass("fa-plus").css({color: "black"});
+                return 1;
+            }
+        })
+    })
 });

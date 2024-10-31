@@ -1,0 +1,223 @@
+.faqs {
+  height: 320px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content {
+    width: 1180px;
+
+    h1 {
+      color: #FFFFFF;
+      font-size: 52px;
+      font-weight: 600;
+      line-height: 1.2em;
+      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    p {
+      color: #FFFFFFCF;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.2em;
+      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
+    }
+  }
+
+}
+
+.line {
+  width: 40px;
+  height: 2px;
+  background-color: #fbae02;
+  display: inline-block;
+  margin-top: 12px;
+  margin-right: 15px;
+}
+
+.fa-bone {
+  color: #fa524f;
+  padding-right: 10px;
+}
+
+.questions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 90px;
+
+  img {
+    width: 565px;
+    height: 471px;
+  }
+
+  &__first, &__second {
+    display: flex;
+
+    h2 {
+      width: 565px;
+      font-weight: 600;
+      color: #313131;
+      font-size: 45px;
+      line-height: 1.2;
+      margin-top: 26px;
+      margin-bottom: 22px;
+    }
+  }
+
+  &__first-information {
+    margin-left: 70px;
+  }
+
+  &__second-information {
+    margin-right: 70px;
+  }
+
+  &__second {
+    margin-top: 100px;
+  }
+
+  &__text-1, &__text-2 {
+    line-height: 1.65;
+    font-size: 14px;
+    color: #7b7a7a;
+    font-family: poppins, sans-serif;
+    width: 565px;
+  }
+
+  &__text-1 {
+    margin-bottom: 30px;
+  }
+
+  &__text-2 {
+    margin-bottom: 40px;
+  }
+
+  &__number {
+    color: #FBAE02;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+}
+
+.more-questions {
+  height: 624px;
+  background-color: #F1F1F1;
+  padding-top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  &__sub-title {
+    color: #FBAE02;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 1.2;
+  }
+
+  h2 {
+    width: 565px;
+    font-weight: 600;
+    color: #313131;
+    font-size: 45px;
+    line-height: 1.2;
+    margin-top: 26px;
+    margin-bottom: 22px;
+  }
+
+  &__text {
+    width: 580px;
+    line-height: 1.65;
+    font-size: 14px;
+    color: #7b7a7a;
+    font-family: poppins, sans-serif;
+    margin-bottom: 30px;
+  }
+
+  &__social {
+    display: flex;
+
+    &-data {
+      margin-top: 5px;
+      margin-left: 15px;
+
+      p {
+        line-height: 1.2;
+        font-family: poppins, sans-serif;
+      }
+
+      p:first-child {
+        font-size: 13px;
+        font-weight: 400;
+        color: #7B7A7A;
+        margin-bottom: 3px;
+      }
+
+      p:last-child {
+        color: #313131;
+        font-size: 16px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  &__social-image {
+    width: 52px;
+    height: 52px;
+    background-color: #FA524F;
+    fill: #FFFFFF;
+    color: #FFFFFF;
+    font-size: 22px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:first-child {
+      margin-bottom: 20px;
+    }
+  }
+
+
+  .steps-involved {
+    margin-left: 30px;
+    width: 580px;
+    max-height: 382px;
+    border: 2px solid #E9E8E9;
+
+
+    &__step {
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      padding: 20px 20px 20px 20px;
+
+
+      &-description {
+        display: none;
+        height: 100%;
+      }
+
+      span:first-child {
+        font-size: 18px;
+        font-weight: 600;
+        color: #313131;
+      }
+    }
+
+    //Finish steps involved block
+    //Finish steps involved block
+    //Finish steps involved block
+    //Finish steps involved block
+
+
+    > div:not(:last-child) {
+      border-bottom: 2px solid #E9E8E9;
+    }
+
+  }
+
+}

@@ -5,6 +5,7 @@
   font-family: poppins, sans-serif;
 
   &__container {
+    transition: border 0.3s;
     position: relative;
     border-radius: 5px;
     border: 2px solid #E9E8E9;
@@ -14,6 +15,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+
+    &:hover {
+      transition: border-color 0.3s;
+      border-color: #FA524F;
+    }
 
     h2 {
       font-size: 25px;

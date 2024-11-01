@@ -6,31 +6,47 @@ function render_puppies_list()
     <div class="puppies-list-block">
         <div class="puppies-list-block__filter">
             <ul>
-                <li class="pro-checked" data-filter="*">
+                <li class="pro-checked" data-filter="all">
                     <div class="puppies-list-block__filter-element">All</div>
                 </li>
-                <li data-filter=".cats">
+                <li data-filter="cat">
                     <div class="puppies-list-block__filter-element">Cats</div>
                 </li>
-                <li data-filter=".dogs">
+                <li data-filter="dog">
                     <div class="puppies-list-block__filter-element">Dogs</div>
                 </li>
-                <li data-filter=".other">
+                <li data-filter="others">
                     <div class="puppies-list-block__filter-element">Other</div>
                 </li>
             </ul>
         </div>
         <div class="puppies-list-block__elements">
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-            <?php pet_card("https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_11401931-f092-4214-861c-c8ea63b45e67-800x600.jpg", "Charlie1", "Charlie is good on the lead and loves to go out for walks. He needs a leader who teaches him the basic rules.", "3mo"); ?>
-
+            <?php
+            $args = [
+                'category_name' => 'animal',
+                'posts_per_page' => -1
+            ];
+            $posts = get_posts($args);
+            if ($posts) {
+                foreach ($posts as $post) {
+                    setup_postdata($post);
+                    $content = get_the_content();
+                    $content_array = explode("age-", $content);
+                    $name = get_the_title($post->ID);
+                    $thumbnail = get_the_post_thumbnail_url($post->ID);
+                    $description = $content_array[0];
+                    $age = $content_array[1];
+                    $categories = get_the_category($post->ID);
+                    $category_names = [];
+                    $post_link = get_the_permalink($post->ID);
+                    foreach ($categories as $category) {
+                        $category_names[] = $category->name;
+                    }
+                    pet_card($thumbnail, $name, $description, $age, $post_link, $class = $category_names[1]);
+                }
+                wp_reset_postdata();
+            }
+            ?>
         </div>
     </div>
     <?php

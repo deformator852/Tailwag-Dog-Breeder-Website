@@ -171,6 +171,7 @@
 .more-questions .steps-involved__step-description {
   display: none;
   height: 100%;
+  margin-left: 23px;
 }
 .more-questions .steps-involved__step span:first-child {
   font-size: 18px;

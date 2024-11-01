@@ -53,9 +53,13 @@ class ThemeAssets
             ]);
         });
     }
+    
+
 }
 
 $theme_assets = new ThemeAssets();
 $theme_assets->enqueue_assets();
 $theme_assets->add_theme_supports();
 $theme_assets->register_menus();
+
+

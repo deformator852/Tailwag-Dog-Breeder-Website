@@ -5,6 +5,7 @@
   font-family: poppins, sans-serif;
 }
 .service-card__container {
+  transition: border 0.3s;
   position: relative;
   border-radius: 5px;
   border: 2px solid #E9E8E9;
@@ -14,6 +15,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.service-card__container:hover {
+  transition: border-color 0.3s;
+  border-color: #FA524F;
 }
 .service-card__container h2 {
   font-size: 25px;

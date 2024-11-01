@@ -78,4 +78,13 @@ $(document).ready(function () {
             }
         })
     })
+    $(".puppies-list-block__filter ul li").click(function () {
+        let filter = $(this).attr("data-filter");
+        $(`.pet-card:not(${filter})`).hide();
+        $(`.pet-card.${filter}`).show(400);
+
+        if (filter === "all") {
+            $(".pet-card").show(400);
+        }
+    })
 });

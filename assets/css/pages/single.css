@@ -1,0 +1,121 @@
+.red-button {
+  color: #ffffff;
+  background: rgb(251, 105, 98) 80%;
+  padding: 16px 30px 16px 30px;
+  border: none;
+  border-radius: 40px;
+  display: flex;
+  text-align: center;
+  fill: #fff;
+}
+.red-button a {
+  line-height: 1;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.red-button i {
+  margin-left: 15px;
+  color: #ffffff;
+}
+
+.single-pet__information {
+  height: 500px;
+  display: flex;
+  background-color: #F1F1F1;
+  font-family: poppins, sans-serif;
+}
+.single-pet #single-pet__information-image {
+  width: 700px;
+  height: 500px;
+}
+.single-pet__description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+  margin-left: 40px;
+}
+.single-pet__description-detail {
+  display: grid;
+  grid-template-columns: repeat(2, 340px);
+  line-height: 1.65;
+}
+.single-pet__description-brief-description {
+  margin-top: 16px;
+  font-size: 15px;
+  color: #7b7a7a;
+  width: 678px;
+}
+.single-pet__description h2 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #313131;
+  margin-bottom: 20px;
+}
+.single-pet .red-button {
+  margin-top: 28px;
+}
+.single-pet .about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.single-pet .about__text {
+  line-height: 1.65;
+  font-size: 14px;
+  color: #7b7a7a;
+  font-family: poppins, sans-serif;
+  margin-bottom: 50px;
+}
+.single-pet .about__container {
+  margin-top: 62px;
+  width: 1200px;
+}
+.single-pet .about__container h2 {
+  font-size: 33px;
+  line-height: 1.2;
+  font-weight: 600;
+  color: #313131;
+  font-family: poppins, sans-serif;
+  margin-bottom: 20px;
+}
+.single-pet .adoption-rules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: poppins, sans-serif;
+  margin-bottom: 75px;
+}
+.single-pet .adoption-rules__text {
+  width: 1110px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #5B5B5B;
+}
+.single-pet .adoption-rules__title {
+  font-weight: 600;
+  line-height: 1.2;
+  color: #313131;
+  font-size: 22px;
+  margin-bottom: 22px;
+}
+.single-pet .adoption-rules__title i {
+  margin-right: 13px;
+}
+.single-pet .adoption-rules__container {
+  border-radius: 10px;
+  padding: 25px 40px 25px 40px;
+  width: 1200px;
+  height: 243px;
+  background-color: #FEF4DF;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}

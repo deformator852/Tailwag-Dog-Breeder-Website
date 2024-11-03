@@ -8,28 +8,23 @@ class ThemeAssets
       wp_enqueue_style('index', get_template_directory_uri() . '/assets/css/index.css');
       wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
       wp_enqueue_style("poppins", "https://fonts.googleapis.com");
+
       if (is_front_page()) {
         wp_enqueue_style("home_css", get_template_directory_uri() . '/assets/css/pages/home.css');
-      }
-      if (is_single()) {
+      } else if (is_single()) {
         wp_enqueue_style("single", get_template_directory_uri() . '/assets/css/pages/single.css');
-      }
-
-      if (is_page_template("about.php")) {
+      } else if (is_page_template("about.php")) {
         wp_enqueue_style('about_page', get_template_directory_uri() . '/assets/css/pages/about.css');
-      }
-      if (is_page_template("puppies.php")) {
+      } else if (is_page_template("puppies.php")) {
         wp_enqueue_style("puppies_page", get_template_directory_uri() . '/assets/css/pages/puppies.css');
-      }
-      if (is_page_template("services.php")) {
+      } else if (is_page_template("services.php")) {
         wp_enqueue_style("services_page", get_template_directory_uri() . '/assets/css/pages/services.css');
-      }
-      if (is_page_template("contact.php")) {
+      } else if (is_page_template("contact.php")) {
         wp_enqueue_style("contact_page", get_template_directory_uri() . '/assets/css/pages/contact.css');
-      }
-
-      if (is_page_template("FAQs.php")) {
+      } elseif (is_page_template("FAQs.php")) {
         wp_enqueue_style("faqs_page", get_template_directory_uri() . '/assets/css/pages/faqs.css');
+      } else if (is_page_template("shop.php")) {
+        wp_enqueue_style("shop_page", get_template_directory_uri() . '/assets/css/pages/shop.css');
       }
       wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
       wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));

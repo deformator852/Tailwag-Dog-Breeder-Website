@@ -24,31 +24,6 @@
   color: #ffffff;
 }
 
-.about {
-  height: 320px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.about__content {
-  width: 1180px;
-}
-.about__content h1 {
-  color: #FFFFFF;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1.2em;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-}
-.about__content p {
-  color: rgba(255, 255, 255, 0.8117647059);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 1.2em;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
-}
-
 .slick-active:last-child {
   margin-right: 0;
 }

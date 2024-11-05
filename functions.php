@@ -25,6 +25,8 @@ class ThemeAssets
         wp_enqueue_style("faqs_page", get_template_directory_uri() . '/assets/css/pages/faqs.css');
       } else if (is_page_template("shop.php")) {
         wp_enqueue_style("shop_page", get_template_directory_uri() . '/assets/css/pages/shop.css');
+      } else if (is_page_template("cart.php")) {
+        wp_enqueue_style("cart_page", get_template_directory_uri() . '/assets/css/pages/cart.css');
       }
       wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
       wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));

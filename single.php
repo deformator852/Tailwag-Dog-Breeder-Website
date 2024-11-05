@@ -1,4 +1,18 @@
-<?php include_once "components/red_button/red_button.php" ?>
+<?php
+if (isset($_POST['add-to-cart'])) {
+  $product_id = intval(sanitize_text_field($_POST['product-id']));
+  $product_count = intval(sanitize_text_field($_POST['product-count']));
+  $added = WC()->cart->add_to_cart($product_id, $product_count);
+  if ($added) {
+    wp_redirect(wc_get_cart_url());
+    exit;
+  }
+}
+?>
+<?php
+include_once "components/red_button/red_button.php";
+include_once "components/about_block/about_block.php";
+?>
 <?php get_header() ?>
 <main class="main">
     <div class="main__wrapper">
@@ -61,12 +75,7 @@
           <main class="main">
               <div class="main__wrapper">
                   <div class="single-product">
-                      <div class="single-product__about"
-                           style="background-image:url('https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/portrait-of-woman-with-dog-welsh-corgi-pembroke-in-FGH6B9Y-1.jpg');background-size:cover; background-position:center center;">
-                          <div class="single-product__about-container">
-                              <h1><?= $product->get_name(); ?></h1>
-                          </div>
-                      </div>
+                    <?php render_about_block($product->get_name()); ?>
                       <div class="single-product__information">
                           <div class="single-product__information-container">
                               <div class="single-product__img">
@@ -81,9 +90,10 @@
                                     <?= $product->get_short_description(); ?>
                                   </p>
                                   <div class="single-product__add-to-cart">
-                                      <form>
+                                      <form method="POST" action="">
                                           <input type="number" name="product-count" value="1">
-                                          <button type="submit">Add to cart</button>
+                                          <input type="hidden" name="product-id" value="<?= $product->get_id() ?>"/>
+                                          <button type="submit" name="add-to-cart">Add to cart</button>
                                       </form>
                                   </div>
                               </div>

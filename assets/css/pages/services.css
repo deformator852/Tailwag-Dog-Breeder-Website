@@ -83,32 +83,6 @@
   height: 60px;
 }
 
-.services {
-  height: 320px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-.services__content {
-  width: 1180px;
-}
-.services__content h1 {
-  color: #FFFFFF;
-  font-size: 52px;
-  font-weight: 600;
-  line-height: 1.2em;
-  text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-}
-.services__content p {
-  color: rgba(255, 255, 255, 0.8117647059);
-  font-size: 17px;
-  font-weight: 400;
-  line-height: 1.2em;
-  text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
-}
-
 .services-list {
   margin-top: 70px;
   column-gap: 25px;

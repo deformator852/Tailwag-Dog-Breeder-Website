@@ -1,0 +1,125 @@
+.about {
+  margin-bottom: 65px;
+}
+
+.cart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  &__wrapper {
+    width: 1180px;
+  }
+
+  &__table {
+    border-radius: 0;
+    border: 1px solid #f0f1f3;
+    margin: 0 -1px 24px 0;
+    text-align: left;
+    font-size: 14px;
+    width: 100%;
+    border-collapse: separate;
+
+    thead {
+      color: #1a1819;
+      font-size: 17px;
+      background-color: #f0f1f3;
+    }
+
+    th, td {
+      padding-top: 25px;
+      padding-bottom: 15px;
+      height: 56px;
+    }
+
+    td {
+      text-align: left;
+      vertical-align: middle;
+      border-right: 1px solid #f0f1f3;
+    }
+
+    tbody {
+      td {
+        border-top: 1px solid #f0f1f3;
+      }
+
+      .product-remove {
+        width: 95px;
+        text-align: center;
+
+        a {
+          color: black;
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1;
+          border-radius: 100%;
+          height: 1em;
+          width: 1em;
+
+          &:hover {
+            color: #ddd8d8;
+          }
+        }
+      }
+
+      .product-thumbnail {
+        width: 132px;
+        padding-left: 15px;
+
+        img {
+          width: 32px;
+          height: 32px;
+        }
+      }
+
+      .product-name {
+        width: 317px;
+
+        a {
+          text-align: left;
+          padding-left: 10px;
+          color: #1a1819;
+          font-size: 17px;
+          font-weight: 700;
+        }
+      }
+
+      .product-price {
+        width: 159px;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: #606060;
+        padding-left: 10px;
+      }
+
+      .product-quantity {
+        width: 243px;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: #606060;
+        padding-left: 10px;
+
+        input {
+          height: 52px;
+          font-size: 14px;
+          font-weight: 400;
+          border: 1px solid #e4e4e4;
+          width: 64px;
+          border-radius: 4px;
+          text-align: center;
+          margin-right: 9px;
+        }
+      }
+
+      .product-subtotal {
+        width: 230px;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: #606060;
+        padding-left: 10px;
+      }
+    }
+  }
+}

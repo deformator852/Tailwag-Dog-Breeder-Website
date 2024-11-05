@@ -1,33 +1,5 @@
 @use "../components/product_card";
 
-.shop {
-  height: 320px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &__content {
-    width: 1180px;
-
-    h1 {
-      color: #FFFFFF;
-      font-size: 52px;
-      font-weight: 600;
-      line-height: 1.2em;
-      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    p {
-      color: #FFFFFFCF;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.2em;
-      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
-    }
-  }
-}
-
 .products-cards {
   display: grid;
   justify-content: center;

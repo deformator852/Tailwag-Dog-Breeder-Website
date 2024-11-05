@@ -1,34 +1,6 @@
 @use "../components/red_button";
 @use "../components/service_card";
 
-.services {
-  height: 320px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  &__content {
-    width: 1180px;
-
-    h1 {
-      color: #FFFFFF;
-      font-size: 52px;
-      font-weight: 600;
-      line-height: 1.2em;
-      text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
-    }
-
-    p {
-      color: #FFFFFFCF;
-      font-size: 17px;
-      font-weight: 400;
-      line-height: 1.2em;
-      text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.19);
-    }
-  }
-}
 
 .services-list {
   margin-top: 70px;

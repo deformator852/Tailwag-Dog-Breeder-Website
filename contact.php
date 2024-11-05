@@ -1,10 +1,12 @@
 <?php
 //Template Name: Contact
+include_once "components/about_block/about_block.php";
 ?>
 
 <?php get_header(); ?>
 <main class="main">
     <main class="main__wrapper">
+      <?php render_about_block("Contact"); ?>
         <div class="contact">
             <div class="contact__info">
                 <h2 class="contact__title">Send us a Message</h2>
@@ -57,7 +59,7 @@
             </div>
         </div>
         <div class="map">
-            <?= do_shortcode('[wpgmza id="1"]') ?>
+          <?= do_shortcode('[wpgmza id="1"]') ?>
         </div>
     </main>
 </main>

@@ -87,4 +87,5 @@ $(document).ready(function () {
             $(".pet-card").show(400);
         }
     })
+
 });

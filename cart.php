@@ -1,5 +1,16 @@
 <?php
 //Template Name: Cart
+
+if (isset($_POST["remove-product"])) {
+  $product_id = absint($_POST['product-id']);
+  foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+    if ($cart_item['product_id'] == $product_id) {
+      WC()->cart->remove_cart_item($cart_item_key);
+      wp_redirect(wc_get_cart_url());
+      exit;
+    }
+  }
+}
 include_once "components/about_block/about_block.php";
 ?>
 <?php get_header(); ?>
@@ -33,7 +44,12 @@ include_once "components/about_block/about_block.php";
                       $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'woocommerce_thumbnail');
                       ?>
                         <tr>
-                            <td class="product-remove"><a href="removeitem">x</a></td>
+                            <td class="product-remove">
+                                <form action="" method="POST">
+                                    <input type="hidden" name='product-id' value="<?= $product->get_id(); ?>"/>
+                                    <button name="remove-product" type="submit">x</button>
+                                </form>
+                            </td>
                             <td class="product-thumbnail"><img src="<?= $thumbnail_url ?>"/></td>
                             <td class="product-name">
                                 <a href="<?= $permalink ?>">

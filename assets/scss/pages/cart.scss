@@ -28,7 +28,8 @@
       background-color: #f0f1f3;
     }
 
-    th, td {
+    th,
+    td {
       padding-top: 25px;
       padding-bottom: 15px;
       height: 56px;
@@ -115,7 +116,22 @@
           margin-right: 9px;
         }
       }
-
+      .update-cart {
+        td {
+          text-align: right;
+        }
+        button {
+          border: none;
+          border-radius: 50px;
+          width: 152px;
+          height: 44px;
+          font-size: 13px;
+          color: #ffffff;
+          font-weight: 600;
+          background: #fa7270;
+          margin-right: 10px;
+        }
+      }
       .product-subtotal {
         width: 230px;
         font-weight: 400;

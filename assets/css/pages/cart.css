@@ -26,7 +26,8 @@
   font-size: 17px;
   background-color: #f0f1f3;
 }
-.cart__table th, .cart__table td {
+.cart__table th,
+.cart__table td {
   padding-top: 25px;
   padding-bottom: 15px;
   height: 56px;
@@ -99,6 +100,20 @@
   border-radius: 4px;
   text-align: center;
   margin-right: 9px;
+}
+.cart__table tbody .update-cart td {
+  text-align: right;
+}
+.cart__table tbody .update-cart button {
+  border: none;
+  border-radius: 50px;
+  width: 152px;
+  height: 44px;
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 600;
+  background: #fa7270;
+  margin-right: 10px;
 }
 .cart__table tbody .product-subtotal {
   width: 230px;

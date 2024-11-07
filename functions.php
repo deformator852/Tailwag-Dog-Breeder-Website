@@ -32,7 +32,6 @@ class ThemeAssets
       wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
       wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));
       wp_enqueue_script('slick-js', get_template_directory_uri() . '/assets/js/slick.min.js', array('custom-jquery'));
-
     });
   }
 
@@ -58,4 +57,24 @@ $theme_assets = new ThemeAssets();
 $theme_assets->enqueue_assets();
 $theme_assets->add_theme_supports();
 
+function update_cart_quantity()
+{
+  if (!class_exists('WC_Cart')) {
+    return;
+  }
 
+  if (isset($_POST['update-cart']) && isset($_POST['quantity'])) {
+    $product_id = absint($_POST['product_id']);
+    $quantity = absint($_POST['quantity']);
+    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
+      if ($cart_item['product_id'] == $product_id) {
+        WC()->cart->set_quantity($cart_item_key, $quantity, true);
+        break;
+      }
+    }
+  }
+  WC_AJAX::get_refreshed_fragments();
+  wp_die();
+}
+add_action('wp_ajax_update_cart_quantity', 'update_cart_quantity');
+add_action('wp_ajax_nopriv_update_cart_quantity', 'update_cart_quantity'); // Для гостей

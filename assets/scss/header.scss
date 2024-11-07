@@ -1,18 +1,19 @@
 .header {
-  .current-menu-item a {
-    color: #fbae02 !important;
+  #menu-header-menu {
+    > .current-menu-item a {
+      color: #fbae02 !important;
+      &::before {
+        font-family: "Font Awesome 6 Free";
+        content: "\f1b0";
+        margin-right: 5px;
+        margin-bottom: 4px;
+      }
+    }
   }
 
   .fa-chevron-down {
     margin-left: 5px;
     margin-bottom: 2px;
-  }
-
-  .current-menu-item a::before {
-    font-family: "Font Awesome 6 Free";
-    content: '\f1b0';
-    margin-right: 5px;
-    margin-bottom: 4px;
   }
 
   background-color: #fff;
@@ -113,6 +114,4 @@
       }
     }
   }
-
 }
-

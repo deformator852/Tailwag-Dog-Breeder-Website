@@ -2,18 +2,18 @@
   background-color: #fff;
   max-height: 100px;
 }
-.header .current-menu-item a {
+.header #menu-header-menu > .current-menu-item a {
   color: #fbae02 !important;
 }
-.header .fa-chevron-down {
-  margin-left: 5px;
-  margin-bottom: 2px;
-}
-.header .current-menu-item a::before {
+.header #menu-header-menu > .current-menu-item a::before {
   font-family: "Font Awesome 6 Free";
   content: "\f1b0";
   margin-right: 5px;
   margin-bottom: 4px;
+}
+.header .fa-chevron-down {
+  margin-left: 5px;
+  margin-bottom: 2px;
 }
 .header__logo {
   width: 104px;

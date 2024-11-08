@@ -3,12 +3,13 @@
 include_once "components/red_button/red_button.php";
 include_once "components/pet_card/pet_card.php";
 include_once "components/about_block/about_block.php";
+
 class RenderAboutPage
 {
   public function __construct()
   {
     get_header();
-?>
+    ?>
     <main class="main">
       <div class="main__wrapper">
         <?php
@@ -18,12 +19,13 @@ class RenderAboutPage
         ?>
       </div>
     </main>
-  <?php
+    <?php
     get_footer();
   }
-  public function render_meet_our_pets_block()
+
+  public function render_meet_our_pets_block(): void
   {
-  ?>
+    ?>
     <div class="puppies-for-adoption">
       <div class="puppies-for-adoption__content">
         <div class="puppies-for-adoption__title">
@@ -56,13 +58,14 @@ class RenderAboutPage
         ?>
       </div>
     </div>
-  <?php
+    <?php
   }
-  public function render_want_pet_block()
+
+  public function render_want_pet_block(): void
   {
-  ?>
+    ?>
     <div class="want-pet"
-      style="background-image:url('https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_833aaa3b-b42a-4059-962a-87bfe32744aa.jpg');background-size:cover; background-position:center center;">
+         style="background-image:url('https://tailwag.progressionstudios.com/wp-content/uploads/2022/04/twenty20_833aaa3b-b42a-4059-962a-87bfe32744aa.jpg');background-size:cover; background-position:center center;">
       <div class="want-pet__content">
         <h2>Want a pet for your loved ones?</h2>
         <p>Elit sanctus mea no. Ne duo vocent vocibus consetetur. Singulis etam pericula an vis, pri graeco
@@ -70,8 +73,9 @@ class RenderAboutPage
         <?php render_red_button("Apply Today", "contact"); ?>
       </div>
     </div>
-<?php
+    <?php
   }
 }
+
 new RenderAboutPage();
 ?>

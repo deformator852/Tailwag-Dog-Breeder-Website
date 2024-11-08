@@ -3,10 +3,6 @@
 include_once "components/red_button/red_button.php";
 include_once "components/best_for_pet_card/best_for_pet_card.php";
 include_once "components/pet_card/pet_card.php";
-// include_once "home/ready_to_adopt.php";
-// include_once "home/best_for_your_pet.php";
-// include_once "home/want_pet.php";
-// include_once "home/take_care_pets.php";
 include_once "home/available_pets.php";
 
 class RenderHomePage
@@ -135,7 +131,7 @@ class RenderHomePage
                         <li><i class="fas fa-bone"></i>No delenit detracto eum, vix ne integre taci</li>
                         <li><i class="fas fa-bone"></i>An pro facete dicuntei ut epicuri</li>
                     </ul>
-                    </p>
+                    <!-- </p> -->
                 </div>
             </div>
         </div>

@@ -1,9 +1,8 @@
 <?php
-include_once "rest.php";
 
 class ThemeAssets
 {
-  public function enqueue_assets()
+  public function enqueue_assets(): void
   {
     add_action('wp_enqueue_scripts', function () {
       wp_enqueue_style('index', get_template_directory_uri() . '/assets/css/index.css');
@@ -35,14 +34,14 @@ class ThemeAssets
     });
   }
 
-  public function add_theme_supports()
+  public function add_theme_supports(): void
   {
     add_theme_support('post-thumbnails');
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
   }
 
-  public function register_menus()
+  public function register_menus(): void
   {
     add_action("after_setup_theme", function () {
       register_nav_menus([
@@ -56,25 +55,47 @@ class ThemeAssets
 $theme_assets = new ThemeAssets();
 $theme_assets->enqueue_assets();
 $theme_assets->add_theme_supports();
+$theme_assets->register_menus();
 
-function update_cart_quantity()
+// function handle_update_cart()
+// {
+//   if (isset($_POST['products'])) {
+//     $products = $_POST['products'];
+//     $cart = WC()->cart;
+//     foreach ($products as $product) {
+//       $cart->set_quantity($product['product_id'], $product['quantity'], true);
+//       // if (in_array($product['product_id'], array_column($cart, 'product_id'))) {
+//       //   $cart
+//       // }
+//     }
+//     wp_send_json_success(['message' => "success"]);
+//   }
+//   die;
+// }
+
+function handle_update_cart()
 {
-  if (!class_exists('WC_Cart')) {
-    return;
-  }
+  if (isset($_POST['products'])) {
+    $products = $_POST['products'];
+    $cart = WC()->cart;
+    foreach ($products as $product) {
+      $product_id = $product['product_id'];
+      $new_quantity = $product['quantity'];
 
-  if (isset($_POST['update-cart']) && isset($_POST['quantity'])) {
-    $product_id = absint($_POST['product_id']);
-    $quantity = absint($_POST['quantity']);
-    foreach (WC()->cart->get_cart() as $cart_item_key => $cart_item) {
-      if ($cart_item['product_id'] == $product_id) {
-        WC()->cart->set_quantity($cart_item_key, $quantity, true);
-        break;
+      foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
+        if ($cart_item['product_id'] == $product_id) {
+          $cart->set_quantity($cart_item_key, $new_quantity, true);
+        }
       }
     }
+
+    wp_send_json_success(['message' => "Cart updated successfully."]);
+  } else {
+    wp_send_json_error(['message' => "No products data found."]);
   }
-  WC_AJAX::get_refreshed_fragments();
-  wp_die();
+
+  die;
 }
-add_action('wp_ajax_update_cart_quantity', 'update_cart_quantity');
-add_action('wp_ajax_nopriv_update_cart_quantity', 'update_cart_quantity'); // Для гостей
+
+add_action('wp_ajax_nopriv_update_form_action', "handle_update_cart");
+add_action('wp_ajax_update_form_action', "handle_update_cart");

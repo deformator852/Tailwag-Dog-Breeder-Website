@@ -9,11 +9,7 @@ if (isset($_POST["remove-product"])) {
       exit;
     }
   }
-} else if (isset($_POST['update-cart'])) {
-  print_r($user_products);
-  exit;
 }
-
 include_once "components/about_block/about_block.php";
 ?>
 <?php get_header(); ?>
@@ -36,7 +32,7 @@ include_once "components/about_block/about_block.php";
           <tbody>
             <?php
             $cart = WC()->cart->get_cart();
-            foreach ($cart as $cart_item) {
+            foreach ($cart as $cart_item_key => $cart_item) {
               $product = $cart_item['data'];
               $product_name = $product->get_name();
               $product_quantity = $cart_item['quantity'];
@@ -48,7 +44,7 @@ include_once "components/about_block/about_block.php";
               <tr>
                 <td class="product-remove">
                   <form action="" method="POST">
-                    <input type="hidden" name='product-id' value="<?= $product->get_id(); ?>" />
+                    <input type="hidden" name='product-id' value="<?= $product->get_id();  ?>" />
                     <button name="remove-product" type="submit">x</button>
                   </form>
                 </td>
@@ -60,8 +56,8 @@ include_once "components/about_block/about_block.php";
                 </td>
                 <td class="product-price">$<?= $product_price ?></td>
                 <td class="product-quantity">
-                  <input type="number" name="quantity[<?= $cart_item_key ?>]" value="<?= $product_quantity ?>" />
-                  <input type="hidden" name="product-id[<?= $cart_item_key ?>]" value="<?= $product->get_id(); ?>" />
+                  <input type="number" name="quantity" value="<?= $product_quantity ?>" />
+                  <input type="hidden" name="product-id" value="<?= $product->get_id(); ?>" />
                 </td>
                 <td class="product-subtotal">$<?= $product_quantity * $product_price ?></td>
               </tr>
@@ -70,7 +66,7 @@ include_once "components/about_block/about_block.php";
             ?>
             <tr class="update-cart">
               <td colspan="6">
-                <form action="" method="POST">
+                <form action="" id="update-cart__from">
                   <button type="submit" name="update-cart">Update cart</button>
                 </form>
               </td>

@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  let products_list = [];
+  let productsForUpdate = [];
   $(".menu-item-has-children").hover(
     function () {
       $(".sub-menu").fadeIn(400);
@@ -103,11 +103,33 @@ $(document).ready(function () {
       $(".pet-card").show(400);
     }
   });
-  $(".product-quantity input").change(function () {
+  $(".product-quantity input").change(function (e) {
+    $(this).attr("data-filter", "1").attr("value", e.target.value);
     $(".update-cart button").css("background", "#fa524f");
-    products_list.push({ product_id: "product_quantity" });
   });
-  $(".update-cart").submit(function () {
-    // send via WC_AJAX data and update cart
+  $("#update-cart__from").submit(function (e) {
+    e.preventDefault();
+    $(".product-quantity").each((index, element) => {
+      if (index === 0) {
+        return;
+      }
+      const productId = $(element).find('input[name="product-id"]').val();
+      const productQuantity = $(element).find('input[name="quantity"]').val();
+      productsForUpdate.push({
+        product_id: productId,
+        product_quantity: productQuantity,
+      });
+    });
+    $.post(
+      "https://localhost/wordpress/wp-admin/admin-ajax.php",
+      {
+        action: "update_form_action",
+        product_id: 3,
+        products: productsForUpdate,
+      },
+      function (res) {
+        console.log(res);
+      }
+    );
   });
 });

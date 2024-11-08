@@ -1,0 +1,124 @@
+.about {
+  margin-bottom: 65px;
+}
+
+.cart {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.cart__wrapper {
+  width: 1180px;
+}
+.cart__table {
+  border-radius: 0;
+  border: 1px solid #f0f1f3;
+  margin: 0 -1px 24px 0;
+  text-align: left;
+  font-size: 14px;
+  width: 100%;
+  border-collapse: separate;
+}
+.cart__table thead {
+  color: #1a1819;
+  font-size: 17px;
+  background-color: #f0f1f3;
+}
+.cart__table th,
+.cart__table td {
+  padding-top: 25px;
+  padding-bottom: 15px;
+  height: 56px;
+}
+.cart__table td {
+  text-align: left;
+  vertical-align: middle;
+  border-right: 1px solid #f0f1f3;
+}
+.cart__table tbody td {
+  border-top: 1px solid #f0f1f3;
+}
+.cart__table tbody .product-remove {
+  width: 95px;
+  text-align: center;
+}
+.cart__table tbody .product-remove button {
+  color: black;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 100%;
+  height: 1em;
+  width: 1em;
+  border: none;
+  cursor: pointer;
+  background: none;
+}
+.cart__table tbody .product-remove button:hover {
+  color: #ddd8d8;
+}
+.cart__table tbody .product-thumbnail {
+  width: 132px;
+  padding-left: 15px;
+}
+.cart__table tbody .product-thumbnail img {
+  width: 32px;
+  height: 32px;
+}
+.cart__table tbody .product-name {
+  width: 317px;
+}
+.cart__table tbody .product-name a {
+  text-align: left;
+  padding-left: 10px;
+  color: #1a1819;
+  font-size: 17px;
+  font-weight: 700;
+}
+.cart__table tbody .product-price {
+  width: 159px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #606060;
+  padding-left: 10px;
+}
+.cart__table tbody .product-quantity {
+  width: 243px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #606060;
+  padding-left: 10px;
+}
+.cart__table tbody .product-quantity input {
+  height: 52px;
+  font-size: 14px;
+  font-weight: 400;
+  border: 1px solid #e4e4e4;
+  width: 64px;
+  border-radius: 4px;
+  text-align: center;
+  margin-right: 9px;
+}
+.cart__table tbody .update-cart td {
+  text-align: right;
+}
+.cart__table tbody .update-cart button {
+  border: none;
+  border-radius: 50px;
+  width: 152px;
+  height: 44px;
+  font-size: 13px;
+  color: #ffffff;
+  font-weight: 600;
+  background: #fa7270;
+  margin-right: 10px;
+}
+.cart__table tbody .product-subtotal {
+  width: 230px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #606060;
+  padding-left: 10px;
+}

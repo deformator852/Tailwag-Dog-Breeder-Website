@@ -1,0 +1,42 @@
+.services-list {
+  margin-top: 70px;
+  column-gap: 25px;
+  row-gap: 120px;
+  display: grid;
+  grid-template-columns: repeat(3, 400px);
+  grid-template-rows: repeat(3, 300px);
+  justify-content: center;
+  height: 800px;
+}
+
+.adopt-puppy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.adopt-puppy__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.adopt-puppy__content h2 {
+  font-size: 45px;
+  line-height: 1.2;
+  color: #313131;
+  font-weight: 600;
+  font-family: poppins, sans-serif;
+}
+.adopt-puppy__view {
+  display: flex;
+  position: relative;
+}
+.adopt-puppy__view img {
+  width: 450px;
+  height: 425px;
+}
+.adopt-puppy__view .red-button {
+  position: absolute;
+  margin-right: 200px;
+  left: 50%;
+  top: 20%;
+}

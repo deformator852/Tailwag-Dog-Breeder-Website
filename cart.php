@@ -13,68 +13,84 @@ if (isset($_POST["remove-product"])) {
 include_once "components/about_block/about_block.php";
 ?>
 <?php get_header(); ?>
-<main class="main">
-  <div class="main__wrapper">
-    <div class="cart">
-      <?php render_about_block("Cart"); ?>
-      <div class="cart__wrapper">
-        <table class="cart__table" cellspacing="0">
-          <thead>
-            <tr>
-              <th class="product-remove"></th>
-              <th class="product-thumbnail"></th>
-              <th class="product-name">Product</th>
-              <th class="product-price">Price</th>
-              <th class="product-quantity">Quantity</th>
-              <th class="product-subtotal">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody>
-            <?php
-            $cart = WC()->cart->get_cart();
-            foreach ($cart as $cart_item_key => $cart_item) {
-              $product = $cart_item['data'];
-              $product_name = $product->get_name();
-              $product_quantity = $cart_item['quantity'];
-              $product_price = $product->get_price();
-              $thumbnail_id = get_post_thumbnail_id($product->get_id());
-              $permalink = $product->get_permalink();
-              $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'woocommerce_thumbnail');
-            ?>
-              <tr>
-                <td class="product-remove">
-                  <form action="" method="POST">
-                    <input type="hidden" name='product-id' value="<?= $product->get_id();  ?>" />
-                    <button name="remove-product" type="submit">x</button>
-                  </form>
-                </td>
-                <td class="product-thumbnail"><img src="<?= $thumbnail_url ?>" /></td>
-                <td class="product-name">
-                  <a href="<?= $permalink ?>">
-                    <?= $product_name ?>
-                  </a>
-                </td>
-                <td class="product-price">$<?= $product_price ?></td>
-                <td class="product-quantity">
-                  <input type="number" name="quantity" value="<?= $product_quantity ?>" />
-                  <input type="hidden" name="product-id" value="<?= $product->get_id(); ?>" />
-                </td>
-                <td class="product-subtotal">$<?= $product_quantity * $product_price ?></td>
-              </tr>
-            <?php
-            }
-            ?>
-            <tr class="update-cart">
-              <td colspan="6">
-                <form action="" id="update-cart__from">
-                  <button type="submit" name="update-cart">Update cart</button>
-                </form>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</main>
+    <main class="main">
+        <div class="main__wrapper">
+            <div class="cart">
+              <?php render_about_block("Cart"); ?>
+                <div class="cart__wrapper">
+                    <table class="cart__table" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th class="product-remove"></th>
+                            <th class="product-thumbnail"></th>
+                            <th class="product-name">Product</th>
+                            <th class="product-price">Price</th>
+                            <th class="product-quantity">Quantity</th>
+                            <th class="product-subtotal">Subtotal</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php
+                        $cart = WC()->cart->get_cart();
+                        foreach ($cart as $cart_item_key => $cart_item) {
+                          $product = $cart_item['data'];
+                          $product_name = $product->get_name();
+                          $product_quantity = $cart_item['quantity'];
+                          $product_price = $product->get_price();
+                          $thumbnail_id = get_post_thumbnail_id($product->get_id());
+                          $permalink = $product->get_permalink();
+                          $thumbnail_url = wp_get_attachment_image_url($thumbnail_id, 'woocommerce_thumbnail');
+                          ?>
+                            <tr>
+                                <td class="product-remove">
+                                    <form action="" method="POST">
+                                        <input type="hidden" name='product-id' value="<?= $product->get_id(); ?>"/>
+                                        <button name="remove-product" type="submit">x</button>
+                                    </form>
+                                </td>
+                                <td class="product-thumbnail"><img src="<?= $thumbnail_url ?>"/></td>
+                                <td class="product-name">
+                                    <a href="<?= $permalink ?>">
+                                      <?= $product_name ?>
+                                    </a>
+                                </td>
+                                <td class="product-price">$<?= $product_price ?></td>
+                                <td class="product-quantity">
+                                    <input type="number" name="quantity" value="<?= $product_quantity ?>"/>
+                                    <input type="hidden" name="product-id" value="<?= $product->get_id(); ?>"/>
+                                </td>
+                                <td class="product-subtotal">$<?= $product_quantity * $product_price ?></td>
+                            </tr>
+                          <?php
+                        }
+                        ?>
+                        <tr class="update-cart">
+                            <td colspan="6">
+                                <form action="" id="update-cart__form">
+                                    <button type="submit" name="update-cart" disabled>Update cart</button>
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <div class="cart__totals">
+                        <div class="cart__totals-wrapper">
+                            <h2>Cart totals</h2>
+                            <table>
+                                <tbody>
+                                <tr class="cart-total">
+                                    <th>Total</th>
+                                    <td>$150</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="cart__proceed-to-checkout">
+                                <a href="<?= wc_get_checkout_url(); ?>">Proceed to checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 <?php get_footer(); ?>

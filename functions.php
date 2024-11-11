@@ -27,6 +27,8 @@ class ThemeAssets
         wp_enqueue_style("shop_page", get_template_directory_uri() . '/assets/css/pages/shop.css');
       } else if (is_page_template("cart.php")) {
         wp_enqueue_style("cart_page", get_template_directory_uri() . '/assets/css/pages/cart.css');
+      } else if (is_page_template("checkout.php")) {
+        wp_enqueue_style("checkout_page", get_template_directory_uri() . '/assets/css/pages/checkout.css');
       }
       wp_enqueue_script("custom-jquery", get_template_directory_uri() . '/assets/js/jquery-3.7.1.min.js');
       wp_enqueue_script("mainjs", get_template_directory_uri() . '/assets/js/main.js', array("custom-jquery"));
@@ -57,22 +59,6 @@ $theme_assets->enqueue_assets();
 $theme_assets->add_theme_supports();
 $theme_assets->register_menus();
 
-// function handle_update_cart()
-// {
-//   if (isset($_POST['products'])) {
-//     $products = $_POST['products'];
-//     $cart = WC()->cart;
-//     foreach ($products as $product) {
-//       $cart->set_quantity($product['product_id'], $product['quantity'], true);
-//       // if (in_array($product['product_id'], array_column($cart, 'product_id'))) {
-//       //   $cart
-//       // }
-//     }
-//     wp_send_json_success(['message' => "success"]);
-//   }
-//   die;
-// }
-
 function handle_update_cart()
 {
   if (isset($_POST['products'])) {
@@ -80,7 +66,7 @@ function handle_update_cart()
     $cart = WC()->cart;
     foreach ($products as $product) {
       $product_id = $product['product_id'];
-      $new_quantity = $product['quantity'];
+      $new_quantity = $product['product_quantity'];
 
       foreach ($cart->get_cart() as $cart_item_key => $cart_item) {
         if ($cart_item['product_id'] == $product_id) {
